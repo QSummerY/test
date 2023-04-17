@@ -1,0 +1,9 @@
+groups:
+- name: record-test
+  rules:
+  - record: threshold:host:memory_high
+    expr: 15
+  - record: foo
+    expr: sum(foo)
+  - record: broken
+    expr: rate(foo[5m]) > 0
